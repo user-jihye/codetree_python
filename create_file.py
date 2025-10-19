@@ -49,8 +49,8 @@ def create_python_file(trail_num, chapter_num, lesson_num, url):
 
     # 파일 생성
     with open(py_file, 'w', encoding='utf-8') as f:
-        f.write(f'"""\n@see <{url}>\n"""\n\n')
-        f.write(f'"""\n@see <{file_name}>\n"""\n\n')
+        f.write(f'"""\n@see <{url}>\n@problem <{file_name}>\n"""\n\n\n')
+
 
     print(f"✅ Created Python file at: {py_file}")
 
