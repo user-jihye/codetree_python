@@ -4,15 +4,15 @@
 """
 
 
-def func(n, cnt):
+def func(n):
     if n == 1:
-        return cnt
+        return 0
 
     if n % 2 == 0:
-        return func(n / 2, cnt + 1)
+        return func(n / 2) + 1
     else:
-        return func(n * 3 + 1, cnt + 1)
+        return func(n * 3 + 1) + 1
 
 
 n = int(input())
-print(func(n, 0))
+print(func(n))
