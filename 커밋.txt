@@ -1,0 +1,1 @@
+git log --since="00:00:00" --format="- [%ad] %s" --date=format:"%H:%M" | clip
