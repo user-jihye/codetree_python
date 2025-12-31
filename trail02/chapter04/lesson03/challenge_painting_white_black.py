@@ -16,39 +16,26 @@ for _ in range(n):
 
     if dir == 'R':
         for i in range(cur, cur + dx):
-            if checked[i][2] == 'g':
-                continue
-
             checked[i][1] += 1
-
-            if checked[i][0] >= 2 and checked[i][1] >= 2:
-                checked[i][2] = 'g'
-            else:
-                checked[i][2] = 'b'
+            checked[i][2] = 'b'
         cur = cur + dx - 1
 
     else:
         for i in range(cur, cur - dx, -1):
-            if checked[i][2] == 'g':
-                continue
-
             checked[i][0] += 1
-
-            if checked[i][0] >= 2 and checked[i][1] >= 2:
-                checked[i][2] = 'g'
-            else:
-                checked[i][2] = 'w'
+            checked[i][2] = 'w'
         cur = cur - dx + 1
 
 white = 0
 black = 0
 gray = 0
 for w_cnt, b_cnt, color in checked:
-    if color == 'w':
+    if w_cnt >= 2 and b_cnt >= 2:
+        gray += 1
+    elif color == 'w':
         white += 1
     elif color == 'b':
         black += 1
-    elif color == 'g':
-        gray += 1
+
 
 print(white, black, gray)
