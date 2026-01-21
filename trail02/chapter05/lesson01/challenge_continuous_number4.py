@@ -10,11 +10,8 @@ arr = [int(input()) for _ in range(n)]
 max_len = 0
 l = 1
 
-if len(arr) == 1:
-    max_len = 1
-
-for i in range(1, n):
-    if arr[i] > arr[i-1]:
+for i in range(n):
+    if i >= 1 and arr[i] > arr[i-1]:
         l += 1
     else:
         l = 1
